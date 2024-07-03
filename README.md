@@ -1,7 +1,5 @@
 # springBoot
 
-***
-
 ## Getting Started
 
 ### Reference Documentation
