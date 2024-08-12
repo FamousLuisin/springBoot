@@ -1,6 +1,9 @@
 package com.example.springBoot.model.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "produtos")
@@ -11,10 +14,14 @@ public class Produto {
     private int id;
 
     @Column(name = "name", nullable = false, length = 255)
+    @NotBlank
     private String nome;
 
+    @Min(value = 0)
     private Double preco;
 
+    @Min(value = 0)
+    @Max(value = 1)
     private Double desconto;
 
     public Produto(){
