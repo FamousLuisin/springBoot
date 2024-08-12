@@ -10,16 +10,22 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "prod_name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false, length = 255)
     private String nome;
+
+    private Double preco;
+
+    private Double desconto;
 
     public Produto(){
 
     }
 
-    public Produto(String nome){
+    public Produto(String nome, Double preco, Double desconto){
         super();
         this.nome = nome;
+        this.preco = preco;
+        this.desconto = desconto;
     }
 
     public String getNome() {
@@ -36,5 +42,21 @@ public class Produto {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public Double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(Double desconto) {
+        this.desconto = desconto;
     }
 }
